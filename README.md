@@ -3,8 +3,9 @@
 CLI toolkit for GTD framework.
 
 <div style="display:flex;">
-    <img src="./meta/logo.png" style="width:90%; max-width:150px; max-height:150px; object-fit: contain; ">
+    <img src="./meta/banner.png" style="width:90%; max-width:500px; max-height:350px; object-fit: contain; ">
 </div>
+
 
 ## How to use crabby
 
