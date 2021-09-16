@@ -3,14 +3,14 @@
 CLI toolkit for GTD framework.
 
 <div style="display:flex;">
-    <img src="./meta/logo.png" style="width:90%; max-width:200px; max-height:200px; object-fit: contain; ">
+    <img src="./meta/logo.png" style="width:90%; max-width:150px; max-height:150px; object-fit: contain; ">
 </div>
 
 ## How to use crabby
 
 #### 0. Parameters
 
-​	Crabby is a CLI toolkit and gets parameters as output. All the main options have a short and large command. for exaple "crabby new" or "crabby n"	
+Crabby is a CLI toolkit and gets parameters as input. All the main options have a short and large command. for exaple "crabby new" or "crabby n"	
 
 
 
@@ -56,4 +56,21 @@ crabby s my_service
 
 #### 5. Create a new test
 
-Create a new test. You can pass the test type, default value will be unit testing.
+Create a new test. You can pass the test type, default value will be unit testing (u). 
+
+```ba
+crabby t my_test [u|i]
+```
+
+
+
+#### 6. Crab
+
+You can display a crab :)
+
+```bash
+crabby cb
+```
+
+
+
