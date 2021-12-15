@@ -1,4 +1,5 @@
 mod commands;
+mod common;
 mod io;
 mod logger;
 

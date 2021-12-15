@@ -1,12 +1,10 @@
 use crate::logger;
 use crate::io::class::instance;
+use crate::common::constants;
 
 use std::fs::File;
 use std::fs;
 use std::io::Write as _;
-
-
-
 
 pub fn view(mut args : std::env::Args) {
 
@@ -22,18 +20,18 @@ pub fn view(mut args : std::env::Args) {
 
 fn write_file(name : String) -> std::io::Result<()>  {
 
-
     /*
         Create view directory
     */
     let mut base_url : String = String::new(); 
-    base_url.push_str("./views/");
+    base_url.push_str(constants::BASE_DIR);
+    base_url.push_str(constants::VIEWS);
     base_url.push_str(name.as_str());
     base_url.push_str("/");
   
     fs::create_dir_all(base_url.to_owned()).expect("Cannot create directory");
 
-    /*
+    /*    
         Create view typescript file
     */
     let mut url : String = String::new(); 
@@ -55,7 +53,7 @@ fn write_file(name : String) -> std::io::Result<()>  {
 
     class.writeln(line.as_str())
     .indent()
-    .writeln("public show() : void {")
+    .writeln("public show(params : string[]) : void {")
     .writeln("")
     .writeln("}")
     .indent_back()
