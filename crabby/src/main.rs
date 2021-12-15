@@ -1,10 +1,6 @@
+mod commands;
+mod io;
 mod logger;
-mod project;
-mod view;
-mod component;
-mod service;
-mod test;
-mod crab;
 
 fn main() {
     let pattern = std::env::args().nth(1).expect("no pattern given");
@@ -12,22 +8,22 @@ fn main() {
 
     match pattern.as_str() {
         "crab" | "cb" => {
-            crab::crab();
+            commands::crab::crab();
         },
         "new" | "n" => {
-            project::new(args);
+            commands::project::new(args);
         },
         "view" | "v" => {
-            view::view(args);
+            commands::view::view(args);
         },
         "component" | "c" => {
-            component::component(args);
+            commands::component::component(args);
         },
         "service" | "s" => {
-            service::service(args);
+            commands::service::service(args);
         },
         "test"| "t" => {
-            test::test(args);
+            commands::test::test(args);
         },
         "help" | "h" => {
             help();
@@ -40,9 +36,12 @@ fn main() {
 
 fn help() {
     logger::title("Available commands:");
-    logger::log("crab - display a crab");
-    logger::log("start - start a GTD project");
-    logger::log("exit - exit the program");
+    logger::clog(" cb |  crab        -> Display ASCII crabby");
+    logger::clog(" n  |  new         -> Start a GTDF project");
+    logger::clog(" v  |  view        -> Generate new view");
+    logger::clog(" c  |  component   -> Generate new component");
+    logger::clog(" s  |  service     -> Generate new service");
+    logger::clog(" t  |  test        -> Generate new test");
 
     println!("");
 }

@@ -8,3 +8,7 @@ pub fn log(msg: &str) {
     println!("[Crabby] {}", msg);
 }
 
+pub fn clog(msg: &str) {
+    println!("{}", msg);
+}
+
